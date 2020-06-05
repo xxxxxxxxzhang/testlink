@@ -1,5 +1,5 @@
 #!/bin/bash
-sleep 10
+sleep 100
 tar -xvzf /opt/poc/geckodriver-v0.26.0-linux64.tar.gz 
 chmod +x geckodriver 
 cp geckodriver /usr/local/bin/ 

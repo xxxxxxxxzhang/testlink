@@ -30,14 +30,7 @@ def login(host):
     driver.find_element_by_xpath('//*[@id="item_view"]/tbody/tr[16]/td/div/input[3]').click()
     driver.switch_to.parent_frame()
     titlebar=driver.switch_to.frame("titlebar")
-    print("titlebar", titlebar)
-    driver.find_element_by_xpath("/html/body/div[2]/span[2]/a[1]").click()
-    driver.switch_to.parent_frame()
    
-    mainframe=driver.switch_to.frame("mainframe")
-    print("mainframe",mainframe)
-    Select(driver.find_element_by_xpath("/html/body/div/form[1]/table/tbody/tr[5]/td/select")).select_by_value('zh_CN') 
-    driver.find_element_by_xpath("/html/body/div/form[1]/div/input").click()
     
 
 
