@@ -1,0 +1,22 @@
+FROM ubuntu:18.04
+
+<<<<<<< HEAD
+COPY ./config/ /opt/data/
+=======
+# COPY ./config/ /opt/data/
+>>>>>>> 4bbfa3c6f7172728365a0d3ea7cd33cef2648eff
+COPY requirements_config.txt /opt/data/requirements_config.txt
+RUN sed -i s@/archive.ubuntu.com/@/mirrors.tuna.tsinghua.edu.cn/@g /etc/apt/sources.list
+RUN apt-get clean
+RUN apt-get update && apt-get install -y \
+  curl \
+  python3 \
+  python3-pip \
+  firefox
+RUN pip3 install -r /opt/data/requirements_config.txt
+<<<<<<< HEAD
+HEALTHCHECK --interval=5m --timeout=3s \
+  CMD curl -f http://web || exit 1
+=======
+>>>>>>> 4bbfa3c6f7172728365a0d3ea7cd33cef2648eff
+CMD bash /opt/data/config.sh
