@@ -2,8 +2,5 @@ FROM bitnami/testlink:1.9.20-debian-10-r12
 
 COPY ./img/tl-logo-transparent-12.5.png /opt/bitnami/testlink/gui/themes/default/images/tl-logo-transparent-12.5.png
 COPY ./img/tl-logo-transparent-25.png /opt/bitnami/testlink/gui/themes/default/images/tl-logo-transparent-25.png
-<<<<<<< HEAD
-=======
 HEALTHCHECK --interval=5m --timeout=3s \
   CMD curl -f http://web || exit 1
->>>>>>> 4bbfa3c6f7172728365a0d3ea7cd33cef2648eff

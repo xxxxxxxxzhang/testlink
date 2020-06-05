@@ -41,11 +41,8 @@ services:
      container_name: config-app
      depends_on:
        - web
-<<<<<<< HEAD
-=======
      volumes: 
       - ./config/:/opt/data/
->>>>>>> 4bbfa3c6f7172728365a0d3ea7cd33cef2648eff
        
   poc:
      build:
@@ -56,11 +53,7 @@ services:
        - web
        - config
      volumes: 
-<<<<<<< HEAD
-      - ./poc/:/opt/poc/
-=======
        - ./poc/:/opt/poc/
->>>>>>> 4bbfa3c6f7172728365a0d3ea7cd33cef2648eff
 
 volumes:
   mariadb_data:
