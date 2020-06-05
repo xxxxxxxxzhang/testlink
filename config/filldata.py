@@ -33,8 +33,6 @@ def login(host):
    
     
 
-
-
 if __name__ == '__main__':
     if len(sys.argv) != 2:
         print('Usages:exp.py blog_host')
