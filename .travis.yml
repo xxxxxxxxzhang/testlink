@@ -23,6 +23,7 @@ script:
     - sudo bash check_config.sh
     - sudo bash check_poc.sh
     - cat docker-compose.yml
+    - cat /opt/poc/poc.sh
     - sudo cat /etc/hosts
     - curl -vv -L http://${DOMAIN_NAME}:${PORT}
     - sudo bash del_install_file.sh

@@ -28,10 +28,13 @@ def login(host):
     driver.find_element_by_name("tcasePrefix").clear()
     driver.find_element_by_name("tcasePrefix").send_keys("1")
     driver.find_element_by_xpath('//*[@id="item_view"]/tbody/tr[16]/td/div/input[3]').click()
+    print("driver:",driver)
     driver.switch_to.parent_frame()
     titlebar=driver.switch_to.frame("titlebar")
    
     
+
+
 
 if __name__ == '__main__':
     if len(sys.argv) != 2:
