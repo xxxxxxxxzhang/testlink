@@ -6,8 +6,7 @@ cp geckodriver /usr/local/bin/
 geckodriver --version
 echo "start"
 sleep 10
-echo "test:"
-curl http://web
+
 python3 /opt/poc/login.py http://web
 #sqlmap dump users table
 sum=0
