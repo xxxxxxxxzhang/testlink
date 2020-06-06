@@ -1,5 +1,5 @@
 #!/bin/bash
-sleep 300
+sleep 200
 config_result=`sudo docker-compose logs poc`
 
 echo $config_result
