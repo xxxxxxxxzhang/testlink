@@ -1,5 +1,5 @@
 #!/bin/bash
-sleep 300
+sleep 100
 tar -xvzf /opt/poc/geckodriver-v0.26.0-linux64.tar.gz 
 chmod +x geckodriver 
 cp geckodriver /usr/local/bin/ 
@@ -13,7 +13,6 @@ sum=0
 declare -a indexed_arr
 for line in `cat  temp`
 do
-    echo $line
     indexed_arr[sum]=$line
     echo ${indexed_arr[sum]}
     sum+=1
