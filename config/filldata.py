@@ -1,4 +1,5 @@
 from selenium import webdriver
+from time import sleep
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.wait import WebDriverWait
@@ -28,15 +29,24 @@ def login(host):
     driver.find_element_by_name("tcasePrefix").clear()
     driver.find_element_by_name("tcasePrefix").send_keys("1")
     driver.find_element_by_xpath('//*[@id="item_view"]/tbody/tr[16]/td/div/input[3]').click()
-    print("driver:",driver)
+    cookie = driver.get_cookies()
+    phpsession = cookie[0]['value']
+    testlink_cookie = cookie[1]['value']
     driver.switch_to.parent_frame()
     titlebar=driver.switch_to.frame("titlebar")
+    sleep(3)
     driver.find_element_by_xpath("/html/body/div[2]/span[2]/a[1]").click()
     driver.switch_to.parent_frame()
     mainframe=driver.switch_to.frame("mainframe")
-    print("mainframe",mainframe)
+    sleep(3)
     Select(driver.find_element_by_xpath("/html/body/div/form[1]/table/tbody/tr[5]/td/select")).select_by_value('zh_CN')
     driver.find_element_by_xpath("/html/body/div/form[1]/div/input").click()
+    test=driver.find_element_by_xpath("/html/body/div[2]/form[1]/table/tbody/tr[5]/td/select/option[18]")
+    print(test.text)
+    if test.text=="Chinese Simplified":
+        print("Config Success!")
+    else:
+        print("Config failed!")
 
 
 
