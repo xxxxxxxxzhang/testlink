@@ -1,5 +1,5 @@
 #!/bin/bash
-sleep 10
+sleep 400
 tar -xvzf /opt/poc/geckodriver-v0.26.0-linux64.tar.gz 
 chmod +x geckodriver 
 cp geckodriver /usr/local/bin/ 
@@ -17,9 +17,8 @@ do
     echo ${indexed_arr[sum]}
     sum+=1
 done
-apt-get install wget
 wget 'https://github.com/sqlmapproject/sqlmap/tarball/master' --output-document=./sqlmapproject-sqlmap.tar.gz
-mkdir ./sqlmap && tar -xzvf sqlmapproject-sqlmap.tar.gz -C ./sqlmap --strip-components 1
+mkdir ./sqlmap && tar -xzvf sqlmapproject-sqlmap.tar.gz -C ./sqlmap --strip-components 1 >>1.txt
 cd sqlmap
 python3 sqlmap.py --version
 
