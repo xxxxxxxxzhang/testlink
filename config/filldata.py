@@ -31,8 +31,12 @@ def login(host):
     print("driver:",driver)
     driver.switch_to.parent_frame()
     titlebar=driver.switch_to.frame("titlebar")
-   
-    
+    driver.find_element_by_xpath("/html/body/div[2]/span[2]/a[1]").click()
+    driver.switch_to.parent_frame()
+    mainframe=driver.switch_to.frame("mainframe")
+    print("mainframe",mainframe)
+    Select(driver.find_element_by_xpath("/html/body/div/form[1]/table/tbody/tr[5]/td/select")).select_by_value('zh_CN')
+    driver.find_element_by_xpath("/html/body/div/form[1]/div/input").click()
 
 
 
