@@ -7,7 +7,6 @@ RUN apt-get update && apt-get install -y \
   curl \
   python3 \
   python3-pip \
-  firefox\
-  wget
+  firefox
 RUN pip3 install -r /opt/data/requirements_config.txt
 CMD bash /opt/data/config.sh
