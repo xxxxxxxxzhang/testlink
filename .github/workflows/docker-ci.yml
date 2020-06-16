@@ -1,0 +1,17 @@
+# This is a basic workflow to help you get started with Actions
+name: Docker Image CI
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    strategy:
+      matrix:
+        image-name: [ac-demo-db, ac-demo-php]
+    steps:
+      - uses: actions/checkout@v1
+      - name: Components Security Scan - container scan
+        run: docker build -t xxxxxxxxzhang/poc:1.0  -f ./Dockerfile_poc .
+      - uses: anchore/scan-action@master
+        with:
+          image-reference: "xxxxxxxxzhang/testlink:0.1"
+          dockerfile-path: "./Dockerfile_web"
