@@ -6,12 +6,14 @@ jobs:
     runs-on: ubuntu-18.04
     strategy:
       matrix:
-        image-name: [ac-demo-db, ac-demo-php]
+        image-name: [testlink_poc]
     steps:
       - uses: actions/checkout@v1
       - name: Components Security Scan - container scan
         run: docker build -t xxxxxxxxzhang/poc:1.0  -f ./Dockerfile_poc .
       - uses: anchore/scan-action@master
         with:
-          image-reference: "xxxxxxxxzhang/testlink:0.1"
+          image-reference: "xxxxxxxxzhang/poc:1.0"
           dockerfile-path: "./Dockerfile_poc"
+          include-app-packages: true
+          debug: true
