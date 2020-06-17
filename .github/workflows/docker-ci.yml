@@ -6,15 +6,24 @@ jobs:
     runs-on: ubuntu-18.04
     strategy:
       matrix:
+<<<<<<< HEAD
         image-name: [poc,config]
+=======
+        image-name: [testlink_poc]
+>>>>>>> c98bd17ba67be94b82867fd5a074f2d651e40d74
     steps:
       - uses: actions/checkout@v1
       - name: Components Security Scan - container scan
         run: docker build -t xxxxxxxxzhang/${{ matrix.image-name }}:1.0  -f ./Dockerfile_poc .
       - uses: anchore/scan-action@master
         with:
+<<<<<<< HEAD
           image-reference: "xxxxxxxxzhang/${{ matrix.image-name }}:1.0"
           dockerfile-path: "./${{ matrix.image-name }}/Dockerfile"
+=======
+          image-reference: "xxxxxxxxzhang/poc:1.0"
+          dockerfile-path: "./Dockerfile_poc"
+>>>>>>> c98bd17ba67be94b82867fd5a074f2d651e40d74
           include-app-packages: true
           debug: true
       
