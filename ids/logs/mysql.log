@@ -1,0 +1,109 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	mysql
+#open	2020-06-17-04-38-55
+#fields	ts	uid	id.orig_h	id.orig_p	id.resp_h	id.resp_p	cmd	arg	success	rows	response
+#types	time	string	addr	port	addr	port	string	string	bool	count	string
+1592368735.109759	CHwJSu4csTpfBmlw0b	172.20.0.3	60218	172.20.0.2	3306	login	bn_testlink	T	0	-
+1592368735.109759	CHwJSu4csTpfBmlw0b	172.20.0.3	60218	172.20.0.2	3306	init_db	bitnami_testlink	T	0	-
+1592368735.109759	CHwJSu4csTpfBmlw0b	172.20.0.3	60218	172.20.0.2	3306	query	SET CHARACTER SET utf8	T	0	-
+1592368735.109759	CHwJSu4csTpfBmlw0b	172.20.0.3	60218	172.20.0.2	3306	query	SET collation_connection = 'utf8_general_ci'	T	0	-
+1592368735.125425	CHwJSu4csTpfBmlw0b	172.20.0.3	60218	172.20.0.2	3306	query	 SELECT id,login,password,cookie_string,first,last,email, role_id,locale,  login AS fullname, active,default_testproject_id, script_key,auth_method,creation_ts,expiration_date  FROM users WHERE login = 'admin'	T	0	-
+1592368735.125425	CHwJSu4csTpfBmlw0b	172.20.0.3	60218	172.20.0.2	3306	query	SELECT * FROM db_version ORDER BY upgrade_ts DESC LIMIT 1	T	0	-
+1592368735.125425	CHwJSu4csTpfBmlw0b	172.20.0.3	60218	172.20.0.2	3306	query	SHOW COLUMNS FROM `users`	T	0	-
+1592368735.126250	CHwJSu4csTpfBmlw0b	172.20.0.3	60218	172.20.0.2	3306	query	SELECT * FROM db_version ORDER BY upgrade_ts DESC LIMIT 1	T	0	-
+1592368735.134146	CHwJSu4csTpfBmlw0b	172.20.0.3	60218	172.20.0.2	3306	query	SHOW COLUMNS FROM `users`	T	0	-
+1592368735.134146	CHwJSu4csTpfBmlw0b	172.20.0.3	60218	172.20.0.2	3306	query	DELETE FROM events  WHERE fired_at < 1589776735	T	0	-
+1592368735.149781	CHwJSu4csTpfBmlw0b	172.20.0.3	60218	172.20.0.2	3306	quit	(empty)	-	-	-
+1592368735.510103	CrREbW1T0DQw0Np2v5	172.20.0.3	60224	172.20.0.2	3306	login	bn_testlink	T	0	-
+1592368735.510103	CrREbW1T0DQw0Np2v5	172.20.0.3	60224	172.20.0.2	3306	init_db	bitnami_testlink	T	0	-
+1592368735.510103	CrREbW1T0DQw0Np2v5	172.20.0.3	60224	172.20.0.2	3306	query	SET CHARACTER SET utf8	T	0	-
+1592368735.510103	CrREbW1T0DQw0Np2v5	172.20.0.3	60224	172.20.0.2	3306	query	SET collation_connection = 'utf8_general_ci'	T	0	-
+1592368735.510103	CrREbW1T0DQw0Np2v5	172.20.0.3	60224	172.20.0.2	3306	query	SELECT * FROM db_version ORDER BY upgrade_ts DESC LIMIT 1	T	0	-
+1592368735.510103	CrREbW1T0DQw0Np2v5	172.20.0.3	60224	172.20.0.2	3306	query	SHOW COLUMNS FROM `users`	T	0	-
+1592368735.517901	CrREbW1T0DQw0Np2v5	172.20.0.3	60224	172.20.0.2	3306	query	 SELECT id,login,password,cookie_string,first,last,email, role_id,locale,  login AS fullname, active,default_testproject_id, script_key,auth_method,creation_ts,expiration_date  FROM users WHERE login = 'user'	T	0	-
+1592368735.525947	CrREbW1T0DQw0Np2v5	172.20.0.3	60224	172.20.0.2	3306	query	SELECT a.id AS role_id,a.description AS role_desc, a.notes  ,c.id AS right_id,c.description  FROM roles a  LEFT OUTER JOIN role_rights b ON a.id = b.role_id  LEFT OUTER JOIN rights  c ON b.right_id = c.id  WHERE a.id = 8	T	0	-
+1592368735.525947	CrREbW1T0DQw0Np2v5	172.20.0.3	60224	172.20.0.2	3306	query	SELECT testproject_id,role_id  FROM user_testproject_roles user_testproject_roles  WHERE user_id = 1	T	0	-
+1592368735.533674	CrREbW1T0DQw0Np2v5	172.20.0.3	60224	172.20.0.2	3306	query	SELECT testplan_id,role_id  FROM user_testplan_roles user_testplan_roles  WHERE user_id = 1	T	0	-
+1592368735.806160	CrREbW1T0DQw0Np2v5	172.20.0.3	60224	172.20.0.2	3306	query	 SELECT id,login,password,cookie_string,first,last,email, role_id,locale,  login AS fullname, active,default_testproject_id, script_key,auth_method,creation_ts,expiration_date  FROM users WHERE login = 'user'	T	0	-
+1592368735.806160	CrREbW1T0DQw0Np2v5	172.20.0.3	60224	172.20.0.2	3306	query	SELECT testproject_id,role_id  FROM user_testproject_roles user_testproject_roles  WHERE user_id = 1	T	0	-
+1592368735.806160	CrREbW1T0DQw0Np2v5	172.20.0.3	60224	172.20.0.2	3306	query	SELECT testplan_id,role_id  FROM user_testplan_roles user_testplan_roles  WHERE user_id = 1	T	0	-
+1592368735.861620	CrREbW1T0DQw0Np2v5	172.20.0.3	60224	172.20.0.2	3306	query	 SELECT * FROM node_types 	T	0	-
+1592368735.861620	CrREbW1T0DQw0Np2v5	172.20.0.3	60224	172.20.0.2	3306	query	/* Class:testproject - Method: get_accessible_for_user */ SELECT id,role_id FROM users where id=1	T	0	-
+1592368735.861754	CrREbW1T0DQw0Np2v5	172.20.0.3	60224	172.20.0.2	3306	query	 SELECT id,login,password,cookie_string,first,last,email, role_id,locale,  login AS fullname, active,default_testproject_id, script_key,auth_method,creation_ts,expiration_date  FROM users WHERE id = 1	T	0	-
+1592368735.862310	CrREbW1T0DQw0Np2v5	172.20.0.3	60224	172.20.0.2	3306	query	 /* Class:testproject - Method: get_accessible_for_user */ SELECT  TPROJ.*,NHTPROJ.name,COALESCE(UTR.role_id,U.role_id) AS effective_role      FROM nodes_hierarchy NHTPROJ  JOIN testprojects TPROJ ON NHTPROJ.id=TPROJ.id  JOIN users U ON U.id = 1  LEFT OUTER JOIN user_testproject_roles UTR  ON TPROJ.id = UTR.testproject_id  AND UTR.user_id =1 WHERE 1=1 ORDER BY TPROJ.prefix ASC	T	0	-
+1592368735.893981	CrREbW1T0DQw0Np2v5	172.20.0.3	60224	172.20.0.2	3306	query	/* Class:tlTransaction - Method: writeToDB */ INSERT INTO transactions (entry_point,start_time,end_time,user_id,session_id) VALUES ('/login.php',1592368735,0,1,'6j02f678ie3u6br7mt9sbm9ndb')	T	1	-
+1592368735.902157	CrREbW1T0DQw0Np2v5	172.20.0.3	60224	172.20.0.2	3306	query	/* Class:tlEvent - Method: writeToDB */ INSERT INTO events (transaction_id,log_level,description,source,fired_at,object_id,object_type,activity) VALUES (1550,16,'O:18:\\"tlMetaStringHelper\\":4:{s:5:\\"label\\";s:21:\\"audit_login_succeeded\\";s:6:\\"params\\";a:2:{i:0;s:4:\\"user\\";i:1;s:10:\\"172.20.0.4\\";}s:13:\\"bDontLocalize\\";b:0;s:14:\\"bDontFireEvent\\";b:0;}','GUI - \xe6\xb5\x8b\xe8\xaf\x95\xe4\xba\xa7\xe5\x93\x81 ID : 1',1592368735,1,'users','LOGIN')	T	1	-
+1592368735.908483	CrREbW1T0DQw0Np2v5	172.20.0.3	60224	172.20.0.2	3306	query	 /* Class:tlTransaction - Method: writeToDB */  UPDATE transactions SET end_time = 1592368735  WHERE id = 1550	T	1	-
+1592368735.909073	CrREbW1T0DQw0Np2v5	172.20.0.3	60224	172.20.0.2	3306	quit	(empty)	-	-	-
+1592368736.029611	CQaApv4Si9LWJ4dtbj	172.20.0.3	60226	172.20.0.2	3306	login	bn_testlink	T	0	-
+1592368736.029611	CQaApv4Si9LWJ4dtbj	172.20.0.3	60226	172.20.0.2	3306	init_db	bitnami_testlink	T	0	-
+1592368736.029611	CQaApv4Si9LWJ4dtbj	172.20.0.3	60226	172.20.0.2	3306	query	SET CHARACTER SET utf8	T	0	-
+1592368736.029611	CQaApv4Si9LWJ4dtbj	172.20.0.3	60226	172.20.0.2	3306	query	SET collation_connection = 'utf8_general_ci'	T	0	-
+1592368736.029611	CQaApv4Si9LWJ4dtbj	172.20.0.3	60226	172.20.0.2	3306	query	 SELECT id,login,password,cookie_string,first,last,email, role_id,locale,  login AS fullname, active,default_testproject_id, script_key,auth_method,creation_ts,expiration_date  FROM users WHERE id = 1	T	0	-
+1592368736.029611	CQaApv4Si9LWJ4dtbj	172.20.0.3	60226	172.20.0.2	3306	query	SELECT a.id AS role_id,a.description AS role_desc, a.notes  ,c.id AS right_id,c.description  FROM roles a  LEFT OUTER JOIN role_rights b ON a.id = b.role_id  LEFT OUTER JOIN rights  c ON b.right_id = c.id  WHERE a.id = 8	T	0	-
+1592368736.038131	CQaApv4Si9LWJ4dtbj	172.20.0.3	60226	172.20.0.2	3306	query	SELECT testproject_id,role_id  FROM user_testproject_roles user_testproject_roles  WHERE user_id = 1	T	0	-
+1592368736.038131	CQaApv4Si9LWJ4dtbj	172.20.0.3	60226	172.20.0.2	3306	query	SELECT testplan_id,role_id  FROM user_testplan_roles user_testplan_roles  WHERE user_id = 1	T	0	-
+1592368736.045249	CQaApv4Si9LWJ4dtbj	172.20.0.3	60226	172.20.0.2	3306	quit	(empty)	-	-	-
+1592368736.194006	CRnh3H3ktrFllLOfz7	172.20.0.3	60230	172.20.0.2	3306	login	bn_testlink	T	0	-
+1592368736.194006	CRnh3H3ktrFllLOfz7	172.20.0.3	60230	172.20.0.2	3306	init_db	bitnami_testlink	T	0	-
+1592368736.194006	CRnh3H3ktrFllLOfz7	172.20.0.3	60230	172.20.0.2	3306	query	SET CHARACTER SET utf8	T	0	-
+1592368736.194006	CRnh3H3ktrFllLOfz7	172.20.0.3	60230	172.20.0.2	3306	query	SET collation_connection = 'utf8_general_ci'	T	0	-
+1592368736.194391	CRnh3H3ktrFllLOfz7	172.20.0.3	60230	172.20.0.2	3306	query	 SELECT id,login,password,cookie_string,first,last,email, role_id,locale,  login AS fullname, active,default_testproject_id, script_key,auth_method,creation_ts,expiration_date  FROM users WHERE id = 1	T	0	-
+1592368736.201497	CRnh3H3ktrFllLOfz7	172.20.0.3	60230	172.20.0.2	3306	query	SELECT a.id AS role_id,a.description AS role_desc, a.notes  ,c.id AS right_id,c.description  FROM roles a  LEFT OUTER JOIN role_rights b ON a.id = b.role_id  LEFT OUTER JOIN rights  c ON b.right_id = c.id  WHERE a.id = 8	T	0	-
+1592368736.201497	CRnh3H3ktrFllLOfz7	172.20.0.3	60230	172.20.0.2	3306	query	SELECT testproject_id,role_id  FROM user_testproject_roles user_testproject_roles  WHERE user_id = 1	T	0	-
+1592368736.201497	CRnh3H3ktrFllLOfz7	172.20.0.3	60230	172.20.0.2	3306	query	SELECT testplan_id,role_id  FROM user_testplan_roles user_testplan_roles  WHERE user_id = 1	T	0	-
+1592368736.201727	CXcBJn1Fg2tvceYihl	172.20.0.3	60232	172.20.0.2	3306	login	bn_testlink	T	0	-
+1592368736.201815	CXcBJn1Fg2tvceYihl	172.20.0.3	60232	172.20.0.2	3306	init_db	bitnami_testlink	T	0	-
+1592368736.201870	CXcBJn1Fg2tvceYihl	172.20.0.3	60232	172.20.0.2	3306	query	SET CHARACTER SET utf8	T	0	-
+1592368736.201959	CXcBJn1Fg2tvceYihl	172.20.0.3	60232	172.20.0.2	3306	query	SET collation_connection = 'utf8_general_ci'	T	0	-
+1592368736.202302	CXcBJn1Fg2tvceYihl	172.20.0.3	60232	172.20.0.2	3306	query	/* debugMsg */  SELECT basename FROM plugins WHERE enabled=1 	T	0	-
+1592368736.209412	CXcBJn1Fg2tvceYihl	172.20.0.3	60232	172.20.0.2	3306	quit	(empty)	-	-	-
+1592368736.209412	CRnh3H3ktrFllLOfz7	172.20.0.3	60230	172.20.0.2	3306	query	 SELECT * FROM node_types 	T	0	-
+1592368736.209412	CRnh3H3ktrFllLOfz7	172.20.0.3	60230	172.20.0.2	3306	query	/* debugMsg */ SELECT  testprojects.* , nodes_hierarchy.name  FROM testprojects testprojects,  nodes_hierarchy nodes_hierarchy WHERE testprojects.id = nodes_hierarchy.id  AND testprojects.id=1	T	0	-
+1592368736.209412	CRnh3H3ktrFllLOfz7	172.20.0.3	60230	172.20.0.2	3306	query	 /* Class:tlUser- Method:getAccessibleTestPlans- */  SELECT  NH.id, NH.name, TPLAN.is_public,  COALESCE(USER_TPLAN_ROLES.testplan_id,0) AS has_role,  USER_TPLAN_ROLES.role_id AS user_testplan_role, TPLAN.active, 0 AS selected   FROM nodes_hierarchy NH JOIN testplans TPLAN ON NH.id=TPLAN.id   LEFT OUTER JOIN user_testplan_roles USER_TPLAN_ROLES ON TPLAN.id = USER_TPLAN_ROLES.testplan_id  AND USER_TPLAN_ROLES.user_id = 1 WHERE testproject_id = 1 AND active = 1 AND (USER_TPLAN_ROLES.role_id IS NULL OR  USER_TPLAN_ROLES.role_id != 3) ORDER BY name	T	0	-
+1592368736.209412	CRnh3H3ktrFllLOfz7	172.20.0.3	60230	172.20.0.2	3306	query	 /* Class:tlUser- Method:getAccessibleTestPlans- */  SELECT  NH.id, NH.name, TPLAN.is_public,  COALESCE(USER_TPLAN_ROLES.testplan_id,0) AS has_role,  USER_TPLAN_ROLES.role_id AS user_testplan_role, TPLAN.active, 0 AS selected   FROM nodes_hierarchy NH JOIN testplans TPLAN ON NH.id=TPLAN.id   LEFT OUTER JOIN user_testplan_roles USER_TPLAN_ROLES ON TPLAN.id = USER_TPLAN_ROLES.testplan_id  AND USER_TPLAN_ROLES.user_id = 1 WHERE testproject_id = 1 AND active = 1 AND (USER_TPLAN_ROLES.role_id IS NULL OR  USER_TPLAN_ROLES.role_id != 3) ORDER BY name	T	0	-
+1592368736.209412	CRnh3H3ktrFllLOfz7	172.20.0.3	60230	172.20.0.2	3306	query	 SELECT NH.id, NH.name FROM nodes_hierarchy NH  JOIN testprojects TPRJ  ON TPRJ.id = NH.id 	T	0	-
+1592368736.210027	CRnh3H3ktrFllLOfz7	172.20.0.3	60230	172.20.0.2	3306	query	/* Class:testproject - Method: get_accessible_for_user */ SELECT id,role_id FROM users where id=1	T	0	-
+1592368736.218084	CRnh3H3ktrFllLOfz7	172.20.0.3	60230	172.20.0.2	3306	query	 SELECT id,login,password,cookie_string,first,last,email, role_id,locale,  login AS fullname, active,default_testproject_id, script_key,auth_method,creation_ts,expiration_date  FROM users WHERE id = 1	T	0	-
+1592368736.218084	CRnh3H3ktrFllLOfz7	172.20.0.3	60230	172.20.0.2	3306	query	 /* Class:testproject - Method: get_accessible_for_user */ SELECT  TPROJ.id,TPROJ.prefix,TPROJ.active,NHTPROJ.name      FROM nodes_hierarchy NHTPROJ  JOIN testprojects TPROJ ON NHTPROJ.id=TPROJ.id  JOIN users U ON U.id = 1  LEFT OUTER JOIN user_testproject_roles UTR  ON TPROJ.id = UTR.testproject_id  AND UTR.user_id =1 WHERE 1=1 ORDER BY TPROJ.prefix ASC	T	0	-
+1592368736.225913	CRnh3H3ktrFllLOfz7	172.20.0.3	60230	172.20.0.2	3306	query	/* Class:testproject - Method: getTestCasePrefix */ SELECT prefix FROM testprojects WHERE id = 1	T	0	-
+1592368736.225913	CRnh3H3ktrFllLOfz7	172.20.0.3	60230	172.20.0.2	3306	query	/* Class:testproject - Method: getItemCount */  SELECT COUNT(0) AS qty FROM testprojects 	T	0	-
+1592368736.225913	CRnh3H3ktrFllLOfz7	172.20.0.3	60230	172.20.0.2	3306	query	 /* Class:tlUser- Method:getAccessibleTestPlans- */  SELECT  NH.id, NH.name, TPLAN.is_public,  COALESCE(USER_TPLAN_ROLES.testplan_id,0) AS has_role,  USER_TPLAN_ROLES.role_id AS user_testplan_role, TPLAN.active, 0 AS selected   FROM nodes_hierarchy NH JOIN testplans TPLAN ON NH.id=TPLAN.id   LEFT OUTER JOIN user_testplan_roles USER_TPLAN_ROLES ON TPLAN.id = USER_TPLAN_ROLES.testplan_id  AND USER_TPLAN_ROLES.user_id = 1 WHERE testproject_id = 1 AND active = 1 AND (USER_TPLAN_ROLES.role_id IS NULL OR  USER_TPLAN_ROLES.role_id != 3) ORDER BY name	T	0	-
+1592368736.258124	CRnh3H3ktrFllLOfz7	172.20.0.3	60230	172.20.0.2	3306	quit	(empty)	-	-	-
+1592368736.258124	C8sGQ13hzMnFQvVpu4	172.20.0.3	60234	172.20.0.2	3306	login	bn_testlink	T	0	-
+1592368736.258124	C8sGQ13hzMnFQvVpu4	172.20.0.3	60234	172.20.0.2	3306	init_db	bitnami_testlink	T	0	-
+1592368736.258124	C8sGQ13hzMnFQvVpu4	172.20.0.3	60234	172.20.0.2	3306	query	SET CHARACTER SET utf8	T	0	-
+1592368736.258124	C8sGQ13hzMnFQvVpu4	172.20.0.3	60234	172.20.0.2	3306	query	SET collation_connection = 'utf8_general_ci'	T	0	-
+1592368736.258579	C8sGQ13hzMnFQvVpu4	172.20.0.3	60234	172.20.0.2	3306	query	 SELECT id,login,password,cookie_string,first,last,email, role_id,locale,  login AS fullname, active,default_testproject_id, script_key,auth_method,creation_ts,expiration_date  FROM users WHERE id = 1	T	0	-
+1592368736.265898	C8sGQ13hzMnFQvVpu4	172.20.0.3	60234	172.20.0.2	3306	query	SELECT a.id AS role_id,a.description AS role_desc, a.notes  ,c.id AS right_id,c.description  FROM roles a  LEFT OUTER JOIN role_rights b ON a.id = b.role_id  LEFT OUTER JOIN rights  c ON b.right_id = c.id  WHERE a.id = 8	T	0	-
+1592368736.273712	C8sGQ13hzMnFQvVpu4	172.20.0.3	60234	172.20.0.2	3306	query	SELECT testproject_id,role_id  FROM user_testproject_roles user_testproject_roles  WHERE user_id = 1	T	0	-
+1592368736.273712	C8sGQ13hzMnFQvVpu4	172.20.0.3	60234	172.20.0.2	3306	query	SELECT testplan_id,role_id  FROM user_testplan_roles user_testplan_roles  WHERE user_id = 1	T	0	-
+1592368736.273712	CLiX7j4arH6Z4ZOjHa	172.20.0.3	60236	172.20.0.2	3306	login	bn_testlink	T	0	-
+1592368736.273712	CLiX7j4arH6Z4ZOjHa	172.20.0.3	60236	172.20.0.2	3306	init_db	bitnami_testlink	T	0	-
+1592368736.273712	CLiX7j4arH6Z4ZOjHa	172.20.0.3	60236	172.20.0.2	3306	query	SET CHARACTER SET utf8	T	0	-
+1592368736.273712	CLiX7j4arH6Z4ZOjHa	172.20.0.3	60236	172.20.0.2	3306	query	SET collation_connection = 'utf8_general_ci'	T	0	-
+1592368736.273712	CLiX7j4arH6Z4ZOjHa	172.20.0.3	60236	172.20.0.2	3306	query	/* debugMsg */  SELECT basename FROM plugins WHERE enabled=1 	T	0	-
+1592368736.273712	CLiX7j4arH6Z4ZOjHa	172.20.0.3	60236	172.20.0.2	3306	quit	(empty)	-	-	-
+1592368736.274110	C8sGQ13hzMnFQvVpu4	172.20.0.3	60234	172.20.0.2	3306	query	 SELECT * FROM node_types 	T	0	-
+1592368736.281755	C8sGQ13hzMnFQvVpu4	172.20.0.3	60234	172.20.0.2	3306	query	/* debugMsg */ SELECT  testprojects.* , nodes_hierarchy.name  FROM testprojects testprojects,  nodes_hierarchy nodes_hierarchy WHERE testprojects.id = nodes_hierarchy.id  AND testprojects.id=1	T	0	-
+1592368736.281755	C8sGQ13hzMnFQvVpu4	172.20.0.3	60234	172.20.0.2	3306	query	 /* Class:tlUser- Method:getAccessibleTestPlans- */  SELECT  NH.id, NH.name, TPLAN.is_public,  COALESCE(USER_TPLAN_ROLES.testplan_id,0) AS has_role,  USER_TPLAN_ROLES.role_id AS user_testplan_role, TPLAN.active, 0 AS selected   FROM nodes_hierarchy NH JOIN testplans TPLAN ON NH.id=TPLAN.id   LEFT OUTER JOIN user_testplan_roles USER_TPLAN_ROLES ON TPLAN.id = USER_TPLAN_ROLES.testplan_id  AND USER_TPLAN_ROLES.user_id = 1 WHERE testproject_id = 1 AND active = 1 AND (USER_TPLAN_ROLES.role_id IS NULL OR  USER_TPLAN_ROLES.role_id != 3) ORDER BY name	T	0	-
+1592368736.281755	C8sGQ13hzMnFQvVpu4	172.20.0.3	60234	172.20.0.2	3306	query	 /* Class:tlUser- Method:getAccessibleTestPlans- */  SELECT  NH.id, NH.name, TPLAN.is_public,  COALESCE(USER_TPLAN_ROLES.testplan_id,0) AS has_role,  USER_TPLAN_ROLES.role_id AS user_testplan_role, TPLAN.active, 0 AS selected   FROM nodes_hierarchy NH JOIN testplans TPLAN ON NH.id=TPLAN.id   LEFT OUTER JOIN user_testplan_roles USER_TPLAN_ROLES ON TPLAN.id = USER_TPLAN_ROLES.testplan_id  AND USER_TPLAN_ROLES.user_id = 1 WHERE testproject_id = 1 AND active = 1 AND (USER_TPLAN_ROLES.role_id IS NULL OR  USER_TPLAN_ROLES.role_id != 3) ORDER BY name	T	0	-
+1592368736.289925	C8sGQ13hzMnFQvVpu4	172.20.0.3	60234	172.20.0.2	3306	query	/* Class:testproject - Method: get_accessible_for_user */ SELECT id,role_id FROM users where id=1	T	0	-
+1592368736.289925	C8sGQ13hzMnFQvVpu4	172.20.0.3	60234	172.20.0.2	3306	query	 SELECT id,login,password,cookie_string,first,last,email, role_id,locale,  login AS fullname, active,default_testproject_id, script_key,auth_method,creation_ts,expiration_date  FROM users WHERE id = 1	T	0	-
+1592368736.289925	C8sGQ13hzMnFQvVpu4	172.20.0.3	60234	172.20.0.2	3306	query	 /* Class:testproject - Method: get_accessible_for_user */ SELECT  TPROJ.*,NHTPROJ.name,COALESCE(UTR.role_id,U.role_id) AS effective_role      FROM nodes_hierarchy NHTPROJ  JOIN testprojects TPROJ ON NHTPROJ.id=TPROJ.id  JOIN users U ON U.id = 1  LEFT OUTER JOIN user_testproject_roles UTR  ON TPROJ.id = UTR.testproject_id  AND UTR.user_id =1 WHERE 1=1  ORDER BY name 	T	0	-
+1592368736.289925	C8sGQ13hzMnFQvVpu4	172.20.0.3	60234	172.20.0.2	3306	query	/* Class:testproject - Method: getItemCount */  SELECT COUNT(0) AS qty FROM testprojects 	T	0	-
+1592368736.289925	C8sGQ13hzMnFQvVpu4	172.20.0.3	60234	172.20.0.2	3306	query	/* Class:testproject - Method: get_all_testcases_id */  SELECT id,node_type_id from nodes_hierarchy  WHERE parent_id IN (1) AND node_type_id IN (3,2) 	T	0	-
+1592368736.289925	C8sGQ13hzMnFQvVpu4	172.20.0.3	60234	172.20.0.2	3306	query	/* Class:testproject - Method: getActiveTestPlansCount */ SELECT COUNT(0) AS qty FROM nodes_hierarchy NH_TPLAN  JOIN testplans TPLAN ON NH_TPLAN.id = TPLAN.id  WHERE NH_TPLAN.parent_id = 1 AND TPLAN.active = 1	T	0	-
+1592368736.289925	C8sGQ13hzMnFQvVpu4	172.20.0.3	60234	172.20.0.2	3306	query	 /* Class:tlUser- Method:getAccessibleTestPlans- */  SELECT  NH.id, NH.name, TPLAN.is_public,  COALESCE(USER_TPLAN_ROLES.testplan_id,0) AS has_role,  USER_TPLAN_ROLES.role_id AS user_testplan_role, TPLAN.active, 0 AS selected   FROM nodes_hierarchy NH JOIN testplans TPLAN ON NH.id=TPLAN.id   LEFT OUTER JOIN user_testplan_roles USER_TPLAN_ROLES ON TPLAN.id = USER_TPLAN_ROLES.testplan_id  AND USER_TPLAN_ROLES.user_id = 1 WHERE testproject_id = 1 AND active = 1 AND (USER_TPLAN_ROLES.role_id IS NULL OR  USER_TPLAN_ROLES.role_id != 3) ORDER BY name	T	0	-
+1592368736.298126	C8sGQ13hzMnFQvVpu4	172.20.0.3	60234	172.20.0.2	3306	query	 SELECT id,login,password,cookie_string,first,last,email, role_id,locale,  login AS fullname, active,default_testproject_id, script_key,auth_method,creation_ts,expiration_date  FROM users WHERE login = 'admin'	T	0	-
+1592368736.298126	C8sGQ13hzMnFQvVpu4	172.20.0.3	60234	172.20.0.2	3306	query	SELECT * FROM db_version ORDER BY upgrade_ts DESC LIMIT 1	T	0	-
+1592368736.298126	C8sGQ13hzMnFQvVpu4	172.20.0.3	60234	172.20.0.2	3306	query	SHOW COLUMNS FROM `users`	T	0	-
+1592368736.314142	C8sGQ13hzMnFQvVpu4	172.20.0.3	60234	172.20.0.2	3306	query	/* Class:tlTransaction - Method: writeToDB */ INSERT INTO transactions (entry_point,start_time,end_time,user_id,session_id) VALUES ('/lib/general/mainPage.php',1592368736,0,1,'6j02f678ie3u6br7mt9sbm9ndb')	T	1	-
+1592368736.441964	C8sGQ13hzMnFQvVpu4	172.20.0.3	60234	172.20.0.2	3306	query	/* Class:tlEvent - Method: writeToDB */ INSERT INTO events (transaction_id,log_level,description,source,fired_at,object_id,object_type,activity) VALUES (1551,32,'string \\'poweredBy\\' is not localized for locale \\'zh_CN\\'  - using en_GB','GUI - \xe6\xb5\x8b\xe8\xaf\x95\xe4\xba\xa7\xe5\x93\x81 ID : 1',1592368736,0,NULL,'LOCALIZATION')	T	1	-
+1592368736.449604	C8sGQ13hzMnFQvVpu4	172.20.0.3	60234	172.20.0.2	3306	query	/* Class:tlEvent - Method: writeToDB */ INSERT INTO events (transaction_id,log_level,description,source,fired_at,object_id,object_type,activity) VALUES (1551,32,'string \\'system_descr\\' is not localized for locale \\'zh_CN\\'  - using en_GB','GUI - \xe6\xb5\x8b\xe8\xaf\x95\xe4\xba\xa7\xe5\x93\x81 ID : 1',1592368736,0,NULL,'LOCALIZATION')	T	1	-
+1592368736.457859	C8sGQ13hzMnFQvVpu4	172.20.0.3	60234	172.20.0.2	3306	query	/* Class:tlEvent - Method: writeToDB */ INSERT INTO events (transaction_id,log_level,description,source,fired_at,object_id,object_type,activity) VALUES (1551,32,'string \\'href_codetracker_management\\' is not localized for locale \\'zh_CN\\'  - using en_GB','GUI - \xe6\xb5\x8b\xe8\xaf\x95\xe4\xba\xa7\xe5\x93\x81 ID : 1',1592368736,0,NULL,'LOCALIZATION')	T	1	-
+1592368736.457859	C8sGQ13hzMnFQvVpu4	172.20.0.3	60234	172.20.0.2	3306	query	 /* Class:tlTransaction - Method: writeToDB */  UPDATE transactions SET end_time = 1592368736  WHERE id = 1551	T	1	-
+1592368736.466111	C8sGQ13hzMnFQvVpu4	172.20.0.3	60234	172.20.0.2	3306	quit	(empty)	-	-	-
