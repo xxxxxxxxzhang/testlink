@@ -1,4 +1,4 @@
-version: '2'
+version: '3.1'
 
 services:
   mariadb:
@@ -9,8 +9,12 @@ services:
           - ALLOW_EMPTY_PASSWORD=yes
       volumes:
           - 'mariadb_data:/bitnami'
+      healthcheck:
+            test: "/usr/bin/mysql --user=bn_testlink --password=bitnami --execute \"SHOW DATABASES;\""
+            #test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+            timeout: 20s
+            retries: 3
   web:
-      # image: 'bitnami/testlink:1.9.20-debian-10-r12'
       build:
          context: .
          dockerfile: Dockerfile_web
@@ -33,6 +37,15 @@ services:
       stdin_open: true
       tty: true 
       
+  zeek:
+    image: fixel/zeek:latest
+    container_name: zeek
+    network_mode: 'service:web'
+    volumes:
+      - ./ids/logs:/usr/local/zeek/logs
+      - ./ids/policy_detect:/usr/local/zeek/share/zeek/policy/policy_detect
+    command: -C -i eth0 policy/detect_file_upload_and_sql_ingection  
+    
   config:
      build:
        context: .
