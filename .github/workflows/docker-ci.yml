@@ -4,7 +4,6 @@ on: [push, pull_request]
 jobs:
   build:
     runs-on: ubuntu-18.04
-    strategy:
      
     steps:
       - uses: actions/checkout@v1
@@ -17,7 +16,16 @@ jobs:
 
           include-app-packages: true
           debug: true
-      
+
+      - name: Deploy DVE
+        run: | 
+          ls
+          pwd
+          docker-compose up -d
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: '12'
+
       - name: Components Security Scan - anchore inline scan JSON results
         run: for j in `ls ./anchore-reports/*.json`; do echo "---- ${j} ----"; cat ${j}; echo; done
       - name: Components Security Scan - show vulnerabilities log in human readable format
