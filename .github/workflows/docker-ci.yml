@@ -8,11 +8,11 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Components Security Scan - container scan
-        run: docker build -t xxxxxxxxzhang/${{ matrix.image-name }}:1.0  -f ./Dockerfile_poc .
+        run: docker build -t xxxxxxxxzhang/web:1.0  -f ./Dockerfile_web .
       - uses: anchore/scan-action@master
         with:
-          image-reference: "xxxxxxxxzhang/${{ matrix.image-name }}:1.0"
-          dockerfile-path: "./${{ matrix.image-name }}/Dockerfile"
+          image-reference: "xxxxxxxxzhang/web:1.0"
+          dockerfile-path: "./Dockerfile_web"
 
           include-app-packages: true
           debug: true
