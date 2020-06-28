@@ -21,6 +21,7 @@ jobs:
         run: | 
           docker-compose up 
           ls
+          docker-compose logs poc
       - uses: actions/setup-node@v2-beta
         with:
           node-version: '12'    
