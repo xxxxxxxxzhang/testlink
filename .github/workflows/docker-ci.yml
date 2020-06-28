@@ -21,10 +21,19 @@ jobs:
         run: | 
           docker-compose up -d
           ls
-          cat ids/logs/notices.log
       - uses: actions/setup-node@v2-beta
         with:
-          node-version: '12'
+          node-version: '12'    
+      - name: Check PoC Result
+        run: bash check_poc.sh
+        
+      - name: Recognize Exploit Traffic
+        run: |
+         cat ids/logs/notice.log
+         cp -f ids/logs/notice.log ci/traffic_backup/notice.log
+         git add ci/traffic_backup/
+         git commit -m "CI push traffic back"
+        
 
       - name: Components Security Scan - anchore inline scan JSON results
         run: for j in `ls ./anchore-reports/*.json`; do echo "---- ${j} ----"; cat ${j}; echo; done
