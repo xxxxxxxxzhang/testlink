@@ -42,8 +42,7 @@ event file_state_remove(f: fa_file)
           {
           if("sqlmap" in f$http$user_agent)
               {
-                print(f$http$user_agent);
-                print(f$http$uri);
+
                 local m: Notice::Info = Notice::Info($note=Sql_Ingection_Attack, 
                                                  $msg="Sql_Ingection", 
                                                  $sub=f$http$user_agent,
@@ -68,7 +67,6 @@ event file_state_remove(f: fa_file)
       if ( "logs" in f$http$uri )
           {
             file_content=f$bof_buffer;
-            print(file_content);
             local n: Notice::Info = Notice::Info($note=File_Upload_Attack, 
                                                  $msg="get shell", 
                                                  $sub=file_content,
