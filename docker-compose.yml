@@ -44,7 +44,7 @@ services:
     volumes:
       - ./ids/logs:/usr/local/zeek/logs
       - ./ids/policy_detect:/usr/local/zeek/share/zeek/policy/policy_detect
-    command: -C -i eth0 policy/detect_file_upload_and_sql_ingection  
+    command: -C -i eth0 policy/policy_detect  
     
   config:
      build:
