@@ -19,7 +19,7 @@ jobs:
 
       - name: Deploy DVE
         run: | 
-          docker-compose up -d
+          docker-compose up 
           ls
       - uses: actions/setup-node@v2-beta
         with:
