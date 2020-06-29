@@ -27,7 +27,6 @@ jobs:
           node-version: '12'    
       - name: Check PoC Result
         run: bash check_poc.sh
-        
       - uses: actions/setup-node@v2-beta
         with:
           node-version: '12'
@@ -58,7 +57,6 @@ jobs:
          git add ci/traffic_backup/
          git commit -m "CI push traffic back"
         
-
       - name: Components Security Scan - anchore inline scan JSON results
         run: for j in `ls ./anchore-reports/*.json`; do echo "---- ${j} ----"; cat ${j}; echo; done
       - name: Components Security Scan - show vulnerabilities log in human readable format
