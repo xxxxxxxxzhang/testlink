@@ -35,7 +35,7 @@ jobs:
           npm install
           npm -v
       - name: Check PoC Result
-        run: curl http://127.0.0.1:8000/
+        run: curl http://127.0.0.1:8001/
       - name: Check Service Availability
         run: |
           sleep 100
