@@ -47,7 +47,6 @@ jobs:
           git config --local user.name "xxxxxxxxzhang"
           git add ci/screenshots/
           git commit -m "CI push sreenshots back"
-          
       - name: Recognize Exploit Traffic
         run: |
          cat ids/logs/notice.log
