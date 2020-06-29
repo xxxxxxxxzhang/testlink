@@ -17,7 +17,7 @@ jobs:
           repository_name: 'testlink_web' 
           user_name: ${{ secrets.ALIYUN_USERNAME }}
           password: ${{ secrets.ALIYUN_PASSWORD }}
-          image_version: 'v1.0'
+          image_version: 'v1'
       
 
           include-app-packages: true
