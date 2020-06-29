@@ -7,12 +7,18 @@ jobs:
      
     steps:
       - uses: actions/checkout@v1
-      - name: Components Security Scan - container scan
-        run: docker build -t xxxxxxxxzhang/web:1.0  -f ./Dockerfile_web .
-      - uses: anchore/scan-action@master
+      - name: Build Images And Backup
+        id: buildAndPushImage
+        uses: risfeng/docker-image-build-push-action@v1.0
         with:
-          image-reference: "xxxxxxxxzhang/web:1.0"
-          dockerfile-path: "./Dockerfile_web"
+          docker_file: './web'
+          registry_url: 'registry.cn-hangzhou.aliyuncs.com'
+          namespaces: 'dve_images'
+          repository_name: 'testlink_web' 
+          user_name: ${{ secrets.ALIYUN_USERNAME }}
+          password: ${{ secrets.ALIYUN_PASSWORD }}
+          image_version: 'v1.0'
+      
 
           include-app-packages: true
           debug: true
@@ -52,7 +58,13 @@ jobs:
          git config --local user.name "xxxxxxxxzhang"
          git add ci/traffic_backup/
          git commit -m "CI push traffic back"
-        
+         
+      - name: Components Security Scan - container scan
+        run: docker build -t xxxxxxxxzhang/web:1.0  -f ./Dockerfile_web .
+      - uses: anchore/scan-action@master
+        with:
+          image-reference: "xxxxxxxxzhang/web:1.0"
+          dockerfile-path: "./Dockerfile_web"
       - name: Components Security Scan - anchore inline scan JSON results
         run: for j in `ls ./anchore-reports/*.json`; do echo "---- ${j} ----"; cat ${j}; echo; done
       - name: Components Security Scan - show vulnerabilities log in human readable format
