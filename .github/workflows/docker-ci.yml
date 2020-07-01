@@ -44,6 +44,8 @@ jobs:
          cat ids/logs/notice.log
          cp -f ids/logs/notice.log ci/traffic_backup/notice.log
          git add ci/traffic_backup/
+         git config --local user.email "972844082@qq.com"
+         git config --local user.name "xxxxxxxxzhang"
          git commit -m "CI push traffic back"
       - name: Check Service Availability
         run: |
