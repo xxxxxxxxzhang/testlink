@@ -58,11 +58,11 @@ jobs:
           git add ci/screenshots/
           git commit -m "CI push sreenshots back"
       - name: Components Security Scan - container scan
-        run: docker build -t xxxxxxxxzhang/web:1.0  -f ./Dockerfile_web .
+        run: docker build -t xxxxxxxxzhang/web:1.0  -f ./web/Dockerfile .
       - uses: anchore/scan-action@master
         with:
           image-reference: "xxxxxxxxzhang/web:1.0"
-          dockerfile-path: "./Dockerfile_web"
+          dockerfile-path: "./web/Dockerfile"
       - name: Components Security Scan - anchore inline scan JSON results
         run: for j in `ls ./anchore-reports/*.json`; do echo "---- ${j} ----"; cat ${j}; echo; done
       - name: Components Security Scan - show vulnerabilities log in human readable format
