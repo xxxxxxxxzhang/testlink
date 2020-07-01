@@ -50,12 +50,11 @@ jobs:
           git config --local user.name "xxxxxxxxzhang"
           git add ci/screenshots/
           git commit -m "CI push sreenshots back"
+          
       - name: Recognize Exploit Traffic
         run: |
          cat ids/logs/notice.log
          cp -f ids/logs/notice.log ci/traffic_backup/notice.log
-         git config --local user.email "972844082@qq.com"
-         git config --local user.name "xxxxxxxxzhang"
          git add ci/traffic_backup/
          git commit -m "CI push traffic back"
          
