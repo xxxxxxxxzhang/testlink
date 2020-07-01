@@ -1,6 +1,12 @@
-FROM bitnami/testlink:1.9.20-debian-10-r12
+FROM ubuntu:18.04
 
-COPY ./img/tl-logo-transparent-12.5.png /opt/bitnami/testlink/gui/themes/default/images/tl-logo-transparent-12.5.png
-COPY ./img/tl-logo-transparent-25.png /opt/bitnami/testlink/gui/themes/default/images/tl-logo-transparent-25.png
-HEALTHCHECK --interval=5m --timeout=3s \
-  CMD curl -f http://web || exit 1
+# COPY ./config/ /opt/data/
+COPY ./config/requirements_config.txt /opt/data/requirements_config.txt
+
+RUN apt-get update && apt-get install -y \
+  curl \
+  python3 \
+  python3-pip \
+  firefox
+RUN pip3 install -r /opt/data/requirements_config.txt
+CMD bash /opt/data/config.sh
