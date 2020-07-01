@@ -49,7 +49,7 @@ services:
   config:
      build:
        context: .
-       dockerfile: ./conifg/Dockerfile
+       dockerfile: ./config/Dockerfile
      environment: 
        - PYTHONIOENCODING=utf-8
      container_name: config-app
