@@ -8,7 +8,9 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Shell Check
-        run: docker run --rm -v "$PWD:/mnt" koalaman/shellcheck:stable ci/*.sh
+        run: |
+         pwd
+         docker run --rm -v "$PWD:/mnt" koalaman/shellcheck:stable ci/*.sh
       - name: Build Images And Backup
         id: buildAndPushImage
         uses: risfeng/docker-image-build-push-action@v1.0
