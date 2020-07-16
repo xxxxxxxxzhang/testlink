@@ -11,7 +11,7 @@ jobs:
         run: |
          pwd
          ls
-         docker run --rm -v "$PWD:/mnt" koalaman/shellcheck:stable ci/*.sh
+         docker run --rm -v "$PWD:/mnt" koalaman/shellcheck:stable *.sh
       - name: Build Images And Backup
         id: buildAndPushImage
         uses: risfeng/docker-image-build-push-action@v1.0
