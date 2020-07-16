@@ -10,6 +10,7 @@ jobs:
       - name: Shell Check
         run: |
          pwd
+         ls
          docker run --rm -v "$PWD:/mnt" koalaman/shellcheck:stable ci/*.sh
       - name: Build Images And Backup
         id: buildAndPushImage
