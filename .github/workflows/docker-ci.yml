@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-18.04
      
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2.0.0
       - name: Shell Check
         run: |
          pwd
@@ -14,7 +14,7 @@ jobs:
          docker run --rm -v "$PWD:/mnt" koalaman/shellcheck:stable *.sh
       - name: Build Images And Backup
         id: buildAndPushImage
-        uses: risfeng/docker-image-build-push-action@v1.0
+        uses: risfeng/docker-image-build-push-action@v2.0.0
         with:
           docker_file: './web'
           registry_url: 'registry.cn-hangzhou.aliyuncs.com'
@@ -31,12 +31,12 @@ jobs:
           docker-compose up -d
           ls
           docker-compose logs poc
-      - uses: actions/setup-node@v2-beta
+      - uses: actions/setup-node@v2.0.0
         with:
           node-version: '12'    
       - name: Check PoC Result
         run: bash check_poc.sh
-      - uses: actions/setup-node@v2-beta
+      - uses: actions/setup-node@v2.0.0
         with:
           node-version: '12'
       - run: |
@@ -64,7 +64,7 @@ jobs:
           git commit -m "CI push sreenshots back"
       - name: Components Security Scan - container scan
         run: docker build -t xxxxxxxxzhang/web:1.0  -f ./web/Dockerfile .
-      - uses: anchore/scan-action@master
+      - uses: anchore/scan-action@v2.0.0
         with:
           image-reference: "xxxxxxxxzhang/web:1.0"
           dockerfile-path: "./web/Dockerfile"
@@ -73,6 +73,6 @@ jobs:
       - name: Components Security Scan - show vulnerabilities log in human readable format
         run: jq -r '.vulnerabilities[] | "\(.vuln)\t\(.severity)\t\(.package)\t\(.package_name)\t\(.package_version)"' ./anchore-reports/vulnerabilities.json | sort -k2 | grep -v Negligible  
       - name: Push Screenshots And Traffic Back To Master
-        uses: ad-m/github-push-action@master
+        uses: ad-m/github-push-action@v2.0.0
         with:
            github_token: ${{ secrets.GITHUB_TOKEN }}
