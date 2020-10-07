@@ -26,7 +26,7 @@ services:
           - TESTLINK_DATABASE_NAME=bitnami_testlink
           - ALLOW_EMPTY_PASSWORD=yes
       ports:
-          - '8001:80'
+          - '8000:80'
           - '443:443'
       volumes:
           - 'testlink_data:/bitnami'
