@@ -7,6 +7,7 @@ geckodriver --version
 echo "start"
 sleep 10
 apt-get install wget
+echo "111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111"
 curl http://web
 python3 /opt/poc/login.py http://web
 #sqlmap dump users table
