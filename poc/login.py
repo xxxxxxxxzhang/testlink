@@ -12,7 +12,8 @@ def login(host):
     driver = webdriver.Firefox(options=firefox_opt)
     url = host + '/index.php'
     driver.get(url)
-
+    wait = WebDriverWait(driver, 10)
+    wait.until(EC.element_to_be_clickable((By.ID, 'tl_login')))
     driver.find_element_by_id("tl_login").clear()
     driver.find_element_by_id("tl_login").send_keys("user")
     driver.find_element_by_id("tl_password").clear()
