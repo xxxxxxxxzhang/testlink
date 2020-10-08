@@ -1,5 +1,6 @@
 import requests
 import sys
+import time
 from selenium import webdriver
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.wait import WebDriverWait
