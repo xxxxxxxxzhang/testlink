@@ -31,6 +31,7 @@ jobs:
           docker-compose up -d
           ls
           docker-compose logs poc
+
       - uses: actions/setup-node@v2.0.0
         with:
           node-version: '12'    
@@ -50,6 +51,7 @@ jobs:
          git config --local user.email "972844082@qq.com"
          git config --local user.name "xxxxxxxxzhang"
          git commit -m "CI push traffic back"
+
       - name: Check Service Availability
         run: |
           sleep 100
@@ -62,16 +64,21 @@ jobs:
           git config --local user.name "xxxxxxxxzhang"
           git add ci/screenshots/
           git commit -m "CI push sreenshots back"
+
       - name: Components Security Scan - container scan
         run: docker build -t xxxxxxxxzhang/web:1.0  -f ./web/Dockerfile .
+
       - uses: anchore/scan-action@v2.0.0
         with:
           image-reference: "xxxxxxxxzhang/web:1.0"
           dockerfile-path: "./web/Dockerfile"
+
       - name: Components Security Scan - anchore inline scan JSON results
         run: for j in `ls ./anchore-reports/*.json`; do echo "---- ${j} ----"; cat ${j}; echo; done
+
       - name: Components Security Scan - show vulnerabilities log in human readable format
-        run: jq -r '.vulnerabilities[] | "\(.vuln)\t\(.severity)\t\(.package)\t\(.package_name)\t\(.package_version)"' ./anchore-reports/vulnerabilities.json | sort -k2 | grep -v Negligible  
+        run: jq -r '.vulnerabilities[] | "\(.vuln)\t\(.severity)\t\(.package)\t\(.package_name)\t\(.package_version)"' ./anchore-reports/vulnerabilities.json | sort -k2 | grep -v Negligible
+  
       - name: Push Screenshots And Traffic Back To Master
         uses: ad-m/github-push-action@master
         with:

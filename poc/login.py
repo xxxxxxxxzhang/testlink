@@ -21,6 +21,7 @@ def login(host):
     driver.find_element_by_id("tl_login_button").click()
     wait = WebDriverWait(driver, 10)
     wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@name="mainframe"]' )))
+    time.sleep(20)
     driver.switch_to.parent_frame()
     driver.switch_to.frame("mainframe")
     driver.find_element_by_xpath('/html/body/div[3]/div[2]/a[4]').click()
