@@ -18,6 +18,7 @@ def login(host):
     driver.find_element_by_id("tl_password").clear()
     driver.find_element_by_id("tl_password").send_keys("bitnami")
     driver.find_element_by_id("tl_login_button").click()
+    time.sleep(10)
     driver.switch_to.parent_frame()
     driver.switch_to.frame("mainframe")
     driver.find_element_by_xpath('/html/body/div[3]/div[2]/a[4]').click()
@@ -42,7 +43,7 @@ def login(host):
 if __name__ == '__main__':
 
     if len(sys.argv) != 2:
-        print('Usages:exp.py blog_host')
+        print('Usages:exp.py testlink_host')
         exit(0)
 
     h = sys.argv[1]

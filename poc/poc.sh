@@ -1,5 +1,11 @@
 #!/bin/bash
-sleep 400
+while [ "$STATUS" != "200" ]
+do
+    sleep 1
+    STATUS=$(curl -sL -w "%{http_code}" http://web -o /dev/null)
+    echo "config wait for init"
+done
+sleep 30
 tar -xvzf /opt/poc/geckodriver-v0.26.0-linux64.tar.gz 
 chmod +x geckodriver 
 cp geckodriver /usr/local/bin/ 
@@ -7,8 +13,6 @@ geckodriver --version
 echo "start"
 sleep 10
 apt-get install wget
-echo "111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111"
-curl http://web
 python3 /opt/poc/login.py http://web
 #sqlmap dump users table
 sum=0
