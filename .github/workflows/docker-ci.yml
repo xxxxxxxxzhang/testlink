@@ -36,7 +36,9 @@ jobs:
         with:
           node-version: '12'    
       - name: Check PoC Result
-        run: bash check_poc.sh
+        run: |
+          bash check_config.sh
+          bash check_poc.sh
       - uses: actions/setup-node@v2.0.0
         with:
           node-version: '12'
