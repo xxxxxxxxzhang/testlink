@@ -28,7 +28,7 @@ jobs:
 
       - name: Deploy DVE
         run: | 
-          docker-compose up -d
+          docker-compose up
           ls
           docker-compose logs poc
 
