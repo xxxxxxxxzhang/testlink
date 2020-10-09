@@ -16,18 +16,20 @@ def login(host):
     #driver = webdriver.Firefox()
     url = host + '/index.php'
     driver.get(url)
-
+    time.sleep(10)
     driver.find_element_by_id("tl_login").clear()
     driver.find_element_by_id("tl_login").send_keys("user")
     driver.find_element_by_id("tl_password").clear()
     driver.find_element_by_id("tl_password").send_keys("bitnami")
     driver.find_element_by_id("tl_login_button").click()
+    time.sleep(10)
     driver.switch_to.frame("mainframe")
     #WebDriverWait(driver, 60).until(EC.visibility_of_element_located((By.NAME, 'tprojectName')))
     driver.find_element_by_name("tprojectName").clear()
     driver.find_element_by_name("tprojectName").send_keys("NewTest")
     driver.find_element_by_name("tcasePrefix").clear()
     driver.find_element_by_name("tcasePrefix").send_keys("1")
+    time.sleep(10)
     driver.find_element_by_xpath('//*[@id="item_view"]/tbody/tr[16]/td/div/input[3]').click()
     cookie = driver.get_cookies()
     phpsession = cookie[0]['value']
