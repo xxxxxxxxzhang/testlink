@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 
 # COPY ./config/ /opt/data/
-COPY ./config/requirements_config.txt /opt/data/requirements_config.txt
+COPY requirements_config.txt /opt/data/requirements_config.txt
 
 RUN apt-get update && apt-get install -y \
   curl \
