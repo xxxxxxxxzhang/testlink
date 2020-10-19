@@ -15,8 +15,8 @@ def login(host):
     url = host + '/index.php'
     driver.get(url)
     time.sleep(20)
-    wait = WebDriverWait(driver, 60)
-    wait.until(EC.element_to_be_clickable((By.ID, 'tl_login')))
+    #wait = WebDriverWait(driver, 60)
+    #wait.until(EC.element_to_be_clickable((By.ID, 'tl_login')))
     driver.find_element_by_id("tl_login").clear()
     driver.find_element_by_id("tl_login").send_keys("cuc")
     driver.find_element_by_id("tl_password").clear()
