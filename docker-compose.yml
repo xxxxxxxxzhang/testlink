@@ -16,8 +16,8 @@ services:
             retries: 3
   web:
       build:
-         context: .
-         dockerfile: ./web/Dockerfile
+         context: ./web
+         dockerfile: Dockerfile
       container_name: web-app
       environment:
           - MARIADB_HOST=mariadb
@@ -48,8 +48,8 @@ services:
     
   config:
      build:
-       context: .
-       dockerfile: ./config/Dockerfile
+       context: ./config
+       dockerfile: Dockerfile
      environment: 
        - PYTHONIOENCODING=utf-8
      container_name: config-app
@@ -60,8 +60,8 @@ services:
        
   poc:
      build:
-       context: .
-       dockerfile: ./poc/Dockerfile
+       context: ./poc
+       dockerfile: Dockerfile
      container_name: poc-app
      depends_on:
        - web
