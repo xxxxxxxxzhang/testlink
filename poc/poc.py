@@ -22,7 +22,7 @@ def login(host):
     driver.find_element_by_id("tl_password").clear()
     driver.find_element_by_id("tl_password").send_keys("cuc123")
     driver.find_element_by_id("tl_login_button").click()
-    time.sleep(10)
+    time.sleep(20)
     driver.switch_to.parent_frame()
     driver.switch_to.frame("mainframe")
     time.sleep(5)
