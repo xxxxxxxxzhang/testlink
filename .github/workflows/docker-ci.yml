@@ -22,7 +22,7 @@ jobs:
           repository_name: 'testlink_web' 
           user_name: ${{ secrets.ALIYUN_USERNAME }}
           password: ${{ secrets.ALIYUN_PASSWORD }}
-          image_version: 'vssh'
+          image_version: 'vssh2'
           include-app-packages: true
           debug: true
 
@@ -37,8 +37,8 @@ jobs:
           node-version: '12'    
       - name: Check PoC Result
         run: |
-          bash check_config.sh
-          bash check_poc.sh
+          bash ci/check_config.sh
+          bash ci/check_poc.sh
 
       - uses: actions/setup-node@v2.0.0
         with:

@@ -3,6 +3,7 @@ version: '3.1'
 services:
   mariadb:
       image: 'bitnami/mariadb:10.3'
+      container_name: testlink-db-app
       environment:
           - MARIADB_USER=bn_testlink
           - MARIADB_DATABASE=bitnami_testlink
@@ -18,7 +19,7 @@ services:
       build:
          context: ./web
          dockerfile: Dockerfile
-      container_name: web-app
+      container_name: testlink-web-app
       environment:
           - MARIADB_HOST=mariadb
           - MARIADB_PORT_NUMBER=3306
@@ -39,7 +40,7 @@ services:
       
   zeek:
     image: fixel/zeek:latest
-    container_name: zeek
+    container_name: testlink-zeek
     network_mode: 'service:web'
     volumes:
       - ./ids/logs:/usr/local/zeek/logs
@@ -52,7 +53,7 @@ services:
        dockerfile: Dockerfile
      environment: 
        - PYTHONIOENCODING=utf-8
-     container_name: config-app
+     container_name: testlink-config-app
      depends_on:
        - web
      volumes: 
@@ -62,7 +63,7 @@ services:
      build:
        context: ./poc
        dockerfile: Dockerfile
-     container_name: poc-app
+     container_name: testlink-poc-app
      depends_on:
        - web
        - config

@@ -10,8 +10,8 @@ RUN DEBIAN_FRONTEND=noninteractive \
       /var/lib/apt/lists/* \
       /var/tmp/* \
     && mkdir -p /var/run/sshd \
-    && echo 'root:admin' | chpasswd \
+    && echo 'root:${SSH_PASSWORD}' | chpasswd \
     && sed -i 's/#*PermitRootLogin prohibit-password/PermitRootLogin yes/g' /etc/ssh/sshd_config \
     && sed -i 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' /etc/pam.d/sshd 
-
+RUN /usr/sbin/sshd 
 EXPOSE 22
