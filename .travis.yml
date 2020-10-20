@@ -11,14 +11,16 @@ before_install:
     - sudo apt-get update
     - sudo apt-get install -y python3 python3-pip curl
     - pip3 install requests
+
 addons:
     hosts:
         - my.web.666.com
+
 install:
     - sed -i 's/[0-9]*[1-9][0-9]*:80/'${PORT}':80/g' docker-compose.yml
-    - docker-compose up
+    - docker-compose up -d
     - sleep ${SLEEP_TIME}
-
+    - docker-compose logs poc
 script:
     - sudo bash ci/check_config.sh
     - sudo bash ci/check_poc.sh
