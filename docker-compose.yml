@@ -31,7 +31,6 @@ services:
           - '443:443'
       volumes:
           - 'testlink_data:/bitnami'
-          
       depends_on:
           - mariadb
       restart: always

