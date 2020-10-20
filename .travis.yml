@@ -17,7 +17,7 @@ addons:
 
 install:
     - sed -i 's/[0-9]*[1-9][0-9]*:80/'${PORT}':80/g' docker-compose.yml
-    - docker-compose up -d
+    - docker-compose up 
     - sleep ${SLEEP_TIME}
 
 script:
